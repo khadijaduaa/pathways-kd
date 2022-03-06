@@ -19,7 +19,7 @@ function App() {
       <Provider store={initStore()}>
           <BrowserRouter>
               <Routes>
-                  <Route exact path='/login' element={< Login/>}/>
+                  <Route exact path='/' element={< Login/>}/>
                   <Route exact path='/candidate-listing' element={< CandidateListing/>}/>
               </Routes>
           </BrowserRouter>
