@@ -4,13 +4,25 @@ import './App.css';
 import { Button} from "antd";
 import { connect, Provider } from "react-redux";
 import { initStore } from "./store";
+import {
+    Routes,
+    Redirect,
+    Route,
+    BrowserRouter
+} from "react-router-dom";
 import CandidateListing from "./Container/CandidateListing";
+import  Login  from "./Container/Login";
 
 function App() {
   return (
     <div className="App">
       <Provider store={initStore()}>
-         <CandidateListing/>
+          <BrowserRouter>
+              <Routes>
+                  <Route exact path='/login' element={< Login/>}/>
+                  <Route exact path='/candidate-listing' element={< CandidateListing/>}/>
+              </Routes>
+          </BrowserRouter>
       </Provider>
     </div>
   );
